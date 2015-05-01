@@ -99,7 +99,7 @@ Material:
       data:
         first:
           name: _Shininess
-        second: 361
+        second: 313.218414
       data:
         first:
           name: _SrcBlend
@@ -151,11 +151,11 @@ Material:
       data:
         first:
           name: _FresnelScale
-        second: .75
+        second: .657142818
       data:
         first:
           name: _GerstnerIntensity
-        second: 1
+        second: 1.67142904
     m_Colors:
       data:
         first:
@@ -172,27 +172,27 @@ Material:
       data:
         first:
           name: _DistortParams
-        second: {r: 1.48000002, g: .409999996, b: 1.82000005, a: -.600000024}
+        second: {r: 1.44000006, g: .242857099, b: 1.85306394, a: -.531428516}
       data:
         first:
           name: _InvFadeParemeter
-        second: {r: .300000012, g: .5, b: 25, a: 0}
+        second: {r: .218965501, g: .159448296, b: .043103449, a: 0}
       data:
         first:
           name: _AnimationTiling
-        second: {r: 2.86999989, g: 8.02000046, b: 20.8999996, a: 5.90999985}
+        second: {r: .0458255298, g: .0182000007, b: .0457144715, a: .0271296892}
       data:
         first:
           name: _AnimationDirection
-        second: {r: 1, g: 1, b: 1, a: 1}
+        second: {r: 2, g: 4, b: 2, a: -1}
       data:
         first:
           name: _BumpTiling
-        second: {r: 1, g: 1, b: -2, a: 2.75999999}
+        second: {r: .119999997, g: .0700000003, b: .0799999982, a: .0599999987}
       data:
         first:
           name: _BumpDirection
-        second: {r: 2.30999994, g: 1.77999997, b: -1, a: 1}
+        second: {r: 40, g: 40, b: 40, a: -40}
       data:
         first:
           name: _BaseColor
@@ -200,7 +200,7 @@ Material:
       data:
         first:
           name: _ReflectionColor
-        second: {r: .5, g: .5, b: .5, a: .5}
+        second: {r: .529411793, g: .389273375, b: .389273375, a: .501960814}
       data:
         first:
           name: _SpecularColor
@@ -208,32 +208,32 @@ Material:
       data:
         first:
           name: _WorldLightDir
-        second: {r: -.0303758364, g: -.201390788, b: -.979039967, a: 0}
+        second: {r: -.749711454, g: -.422301888, b: .509503663, a: 0}
       data:
         first:
           name: _Foam
-        second: {r: 1.85000002, g: .610000014, b: 11.25, a: 0}
+        second: {r: .426666707, g: .486666709, b: 0, a: 0}
       data:
         first:
           name: _GAmplitude
-        second: {r: .170000002, g: .0900000036, b: .159999996, a: .189999998}
+        second: {r: .180000007, g: .75999999, b: .174999997, a: .224999994}
       data:
         first:
           name: _GFrequency
-        second: {r: -.0299999993, g: 1.55999994, b: 1.25, a: 1.17999995}
+        second: {r: .5, g: .379999995, b: .589999974, a: .600000024}
       data:
         first:
           name: _GSteepness
-        second: {r: 3.81999993, g: 4.4000001, b: 1.45000005, a: 2.1400001}
+        second: {r: 7, g: 2, b: 6, a: 2.1400001}
       data:
         first:
           name: _GSpeed
-        second: {r: 1.70000005, g: 1.375, b: 1.10000002, a: 1.5}
+        second: {r: -3, g: 2, b: 1, a: 3}
       data:
         first:
           name: _GDirectionAB
-        second: {r: .300000012, g: .850000024, b: .850000024, a: .25}
+        second: {r: .469143599, g: .354051292, b: -.200000003, a: .100000001}
       data:
         first:
           name: _GDirectionCD
-        second: {r: .280000001, g: .899999976, b: .5, a: .5}
+        second: {r: .70338881, g: -.679999888, b: .717573524, a: -.200000003}
