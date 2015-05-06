@@ -6,7 +6,7 @@ public class ThunderstormEffect : MonoBehaviour {
 
 
 	public AudioClip thunderstormAudio;
-	public float audioVolume = 1f;
+	//public float audioVolume = 1f;
 	public float delayTimeAudio = 1f;
 	public Color normalSkyColor;
 	public Color flashSkyColor;
@@ -50,7 +50,7 @@ public class ThunderstormEffect : MonoBehaviour {
 	IEnumerator playDelayThunderstormSound(){
 
 		yield return new WaitForSeconds(delayTimeAudio);
-		audioOrigin.PlayOneShot( thunderstormAudio, audioVolume );
+		audioOrigin.PlayOneShot( thunderstormAudio );
 	}
 
 	IEnumerator playOneFlashEffect(){

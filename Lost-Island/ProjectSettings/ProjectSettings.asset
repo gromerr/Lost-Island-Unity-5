@@ -140,7 +140,10 @@ PlayerSettings:
     m_Icons:
     - m_Icon: {fileID: 2800000, guid: 78c41d970a6e5d54e898dc68fdfcee85, type: 3}
       m_Size: 128
-  m_BuildTargetBatching: []
+  m_BuildTargetBatching:
+  - m_BuildTarget: Standalone
+    m_StaticBatching: 1
+    m_DynamicBatching: 1
   webPlayerTemplate: APPLICATION:Default
   m_TemplateCustomTags: {}
   actionOnDotNetUnhandledException: 1
