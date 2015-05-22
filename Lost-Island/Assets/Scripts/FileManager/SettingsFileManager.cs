@@ -24,7 +24,7 @@ public class SettingsFileManager : FileManager {
 	protected override void ReadFromApplication(){
 
 		dataContainer.GeneralAudioVolume = SettingsData.GeneralAudioVolume = AudioListener.volume;
-		dataContainer.GeneralAudioMode = SettingsData.GeneralAudioMode = AudioSettings.GetConfiguration().speakerMode;
+		dataContainer.GeneralAudioMode = SettingsData.GeneralAudioMode = GlobalSettings.ConvertAudioSpeakerModeToInt( AudioSettings.GetConfiguration().speakerMode );
 		dataContainer.AudioEffectVolume = SettingsData.AudioEffectVolume = 1f;
 		dataContainer.AudioVoicesVolume = SettingsData.AudioVoicesVolume = 1f;
 		dataContainer.AudioMusicVolume = SettingsData.AudioMusicVolume = 1f;
@@ -79,7 +79,7 @@ public class SettingsFileManager : FileManager {
 [Serializable]
 class DataContainer{
 	public float GeneralAudioVolume;
-	public AudioSpeakerMode GeneralAudioMode;
+	public int GeneralAudioMode;
 	public float AudioEffectVolume;
 	public float AudioVoicesVolume;
 	public float AudioMusicVolume;

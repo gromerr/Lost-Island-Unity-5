@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
 
@@ -8,7 +8,15 @@ public class MenuBehaviour : MonoBehaviour {
 	public Slider sliderAudioEffectVolume;
 	public Slider sliderAudioVoicesVolume;
 	public Slider sliderAudioMusicVolume;
-	public AudioScene audioScene;
+	public Slider sliderGeneralAudioMode;
+	public Text textGeneralAudioMode;
+
+	private AudioScene audioScene;
+
+	void Awake(){
+
+		audioScene = (AudioScene) FindObjectOfType( typeof(AudioScene));
+	}
 
 	void Start(){
 
@@ -24,6 +32,7 @@ public class MenuBehaviour : MonoBehaviour {
 		sliderAudioEffectVolume.value = SettingsData.AudioEffectVolume;
 		sliderAudioVoicesVolume.value = SettingsData.AudioVoicesVolume;
 		sliderAudioMusicVolume.value = SettingsData.AudioMusicVolume;
+		sliderGeneralAudioMode.value = SettingsData.GeneralAudioMode;
 
 	}
 
@@ -34,17 +43,23 @@ public class MenuBehaviour : MonoBehaviour {
 		Application.Quit();
 	}
 
-	public void ChangeValueOfSettings( Slider slider ){
-
-		Text text = GetComponent<Text>();
-		text.text = slider.value.ToString();
-	}
-
 	/// <summary>
 	/// Sets the general audio volume on slider change.
 	/// </summary>
 	public void SetGeneralAudioVolumeOnSliderChange(){
-		AudioListener.volume = sliderGeneralAudioVolume.value;
+		GlobalSettings.SetGeneralAudioVolume( sliderGeneralAudioVolume.value );
+	}
+
+	/// <summary>
+	/// Sets the general audio mode on slider change.
+	/// </summary>
+	public void SetGeneralAudioModeOnSliderChange(){
+
+		textGeneralAudioMode.text = ((AudioSpeakerMode)sliderGeneralAudioMode.value).ToString();
+
+		GlobalSettings.SetGeneralAudioMode( (int)sliderGeneralAudioMode.value );
+
+		//GlobalSettings.SetGeneralAudioMode( (int)sliderGeneralAudioMode.value );
 	}
 
 	/// <summary>
@@ -89,6 +104,7 @@ public class MenuBehaviour : MonoBehaviour {
 		SettingsData.AudioEffectVolume = sliderAudioEffectVolume.value;
 		SettingsData.AudioMusicVolume = sliderAudioVoicesVolume.value;
 		SettingsData.AudioMusicVolume = sliderAudioMusicVolume.value;
+		SettingsData.GeneralAudioMode = (int)sliderGeneralAudioMode.value;
 
 		GameController.gameController.SaveSettings();
 	}

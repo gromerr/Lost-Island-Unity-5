@@ -19,7 +19,7 @@ public class SettingsData : MonoBehaviour{
 	/// Gets or sets the general audio mode.
 	/// </summary>
 	/// <value>The general audio mode.</value>
-	public static AudioSpeakerMode GeneralAudioMode{
+	public static int GeneralAudioMode{
 		get;
 		set;
 	}
