@@ -9,6 +9,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 422746}
   - 114: {fileID: 11455786}
+  - 114: {fileID: 11469152}
   - 114: {fileID: 11445492}
   m_Layer: 0
   m_Name: Game Controller
@@ -51,6 +52,90 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07faaef01a2168542abae4adb37e909e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &11469152
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 140274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d0dba92933b4164891c8be6688689fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  settings:
+  - name: PixelLightCount
+    graphicFastest: 0
+    graphicFast: 0
+    graphicSimple: 1
+    graphicGood: 2
+    graphicBeautiful: 3
+    graphicFantastic: 4
+    graphicExtreme: 4
+  - name: TextureQuality
+    graphicFastest: 1
+    graphicFast: 0
+    graphicSimple: 0
+    graphicGood: 0
+    graphicBeautiful: 0
+    graphicFantastic: 0
+    graphicExtreme: 0
+  - name: AnisotropicTextures
+    graphicFastest: 0
+    graphicFast: 0
+    graphicSimple: 1
+    graphicGood: 1
+    graphicBeautiful: 2
+    graphicFantastic: 2
+    graphicExtreme: 2
+  - name: AntiAliasing
+    graphicFastest: 0
+    graphicFast: 0
+    graphicSimple: 0
+    graphicGood: 0
+    graphicBeautiful: 1
+    graphicFantastic: 1
+    graphicExtreme: 1
+  - name: RealtimeReflectionProbes
+    graphicFastest: 0
+    graphicFast: 0
+    graphicSimple: 0
+    graphicGood: 1
+    graphicBeautiful: 1
+    graphicFantastic: 1
+    graphicExtreme: 1
+  - name: ShadowDistance
+    graphicFastest: 15
+    graphicFast: 20
+    graphicSimple: 20
+    graphicGood: 40
+    graphicBeautiful: 70
+    graphicFantastic: 150
+    graphicExtreme: 150
+  - name: VSyncCount
+    graphicFastest: 0
+    graphicFast: 0
+    graphicSimple: 0
+    graphicGood: 0
+    graphicBeautiful: 1
+    graphicFantastic: 1
+    graphicExtreme: 1
+  - name: LODBias
+    graphicFastest: .300000012
+    graphicFast: .400000006
+    graphicSimple: .699999988
+    graphicGood: 1
+    graphicBeautiful: 1.5
+    graphicFantastic: 2
+    graphicExtreme: 2
+  - name: ParticleRaycastBudget
+    graphicFastest: 4
+    graphicFast: 16
+    graphicSimple: 64
+    graphicGood: 256
+    graphicBeautiful: 1024
+    graphicFantastic: 4096
+    graphicExtreme: 4096
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

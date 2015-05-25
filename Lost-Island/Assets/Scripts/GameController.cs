@@ -10,6 +10,7 @@ public class GameController : MonoBehaviour {
 
 		HoldGameControllerInEveryScene();
 		settingsManager = new SettingsFileManager();
+		GlobalSettings.SetGraphicsSettings();
 	}
 
 
@@ -31,7 +32,13 @@ public class GameController : MonoBehaviour {
 	/// </summary>
 	public void SaveSettings(){
 
+		GlobalSettings.SetGraphicsSettings();
 		settingsManager.Save();
+	}
+
+	public void StartGame(){
+
+		Application.LoadLevel( 1 );
 	}
 
 

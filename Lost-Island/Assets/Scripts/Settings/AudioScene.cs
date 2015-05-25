@@ -13,8 +13,10 @@ public class AudioScene : MonoBehaviour {
 	public List<GameObject> audioVoices;
 	public List<GameObject> audioMusic;
 
-	void Awake(){
 
+	void Start(){
+
+		MenuBehaviour.menuBehaviour.AudioSceneProperty = this;
 		SetAudioVolumeInCurrentScene();
 	}
 	

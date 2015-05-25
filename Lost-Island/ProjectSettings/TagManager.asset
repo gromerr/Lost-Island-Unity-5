@@ -8,6 +8,7 @@ TagManager:
   - AudioVoice
   - AudioMusic
   - AudioScene
+  - Menu
   layers:
   - Default
   - TransparentFX

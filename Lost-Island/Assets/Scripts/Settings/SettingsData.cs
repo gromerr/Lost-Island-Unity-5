@@ -51,6 +51,113 @@ public class SettingsData : MonoBehaviour{
 		set;
 	}
 
+	/// <summary>
+	/// Gets or sets the screen resolution. Int value shows number of index Screen.resolutions
+	/// </summary>
+	/// <value>The screen resolution.</value>
+	public static int ScreenResolution{
+		get;
+		set;
+	}
+
+	/// <summary>
+	/// Gets or sets a value of Fullscreen mode.
+	/// </summary>
+	/// <value><c>true</c> if full screen; otherwise, <c>false</c>.</value>
+	public static bool FullScreen{
+		get;
+		set;
+	}
+
+	/// <summary>
+	/// Gets or sets the refresh rate in Hz.
+	/// </summary>
+	/// <value>The refresh rate.</value>
+	public static int RefreshRate{
+		get;
+		set;
+	}
+	
+	public static int QualityLevel{
+		get;
+		set;
+	}
+
+	public static int PixelLightCount{
+		get;
+		set;
+	}
+
+	public static int TextureQuality{
+		get;
+		set;
+	}
+
+	public static int AnisotropicTextures{
+		get;
+		set;
+	}
+
+	public static int AntiAliasing{
+		get;
+		set;
+	}
+
+	//TODO Current not passible to change at runtime, check in future.
+//	public static bool SoftParticles{
+//		get;
+//		set;
+//	}
+
+	public static bool RealtimeReflectionProbes{
+		get;
+		set;
+	}
+
+	//TODO Current not passible to change at runtime, check in future.
+//	public static int Shadows{
+//		get;
+//		set;
+//	}
+
+	//TODO Current not passible to change at runtime, check in future.
+//	public static int ShadowResolution{
+//		get;
+//		set;
+//	}
+	
+	public static float ShadowDistance{
+		get;
+		set;
+	}
+
+	//TODO Check in future. Current It is not necessary to change by player.
+//	public static int ShadowCascades{
+//		get;
+//		set;
+//	}
+
+	//TODO Check in future. Current It is not necessary to change by player.
+//	public static int BlendWeights{
+//		get;
+//		set;
+//	}
+
+	public static int VSyncCount{
+		get;
+		set;
+	}
+
+	public static float LODBias{
+		get;
+		set;
+	}
+
+	public static int ParticleRaycastBudget{
+		get;
+		set;
+	}
+
 	void Start(){
 
 
