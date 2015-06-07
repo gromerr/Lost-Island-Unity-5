@@ -23,6 +23,8 @@ public class SettingsFileManager : FileManager {
 	/// </summary>
 	protected override void ReadFromApplication(){
 
+		dataContainer.Language = SettingsData.Language = "pl";
+
 		dataContainer.GeneralAudioVolume = SettingsData.GeneralAudioVolume = AudioListener.volume;
 		dataContainer.GeneralAudioMode = SettingsData.GeneralAudioMode = GlobalSettings.ConvertAudioSpeakerModeToInt( AudioSettings.GetConfiguration().speakerMode );
 		dataContainer.AudioEffectVolume = SettingsData.AudioEffectVolume = 1f;
@@ -43,6 +45,9 @@ public class SettingsFileManager : FileManager {
 		dataContainer.VSyncCount = SettingsData.VSyncCount = QualitySettings.vSyncCount;
 		dataContainer.LODBias = SettingsData.LODBias = QualitySettings.lodBias;
 		dataContainer.ParticleRaycastBudget = SettingsData.ParticleRaycastBudget = QualitySettings.particleRaycastBudget;
+
+		dataContainer.PostProcessingDOF = SettingsData.PostProcessingDOF = true;
+		dataContainer.PostProcessingBloom = SettingsData.PostProcessingBloom = true;
 	}
 
 	/// <summary>
@@ -68,6 +73,9 @@ public class SettingsFileManager : FileManager {
 	/// Gets the global custom data.
 	/// </summary>
 	protected override void GetGlobalCustomData(){
+
+		dataContainer.Language = SettingsData.Language;
+
 		dataContainer.GeneralAudioVolume = SettingsData.GeneralAudioVolume;
 		dataContainer.GeneralAudioMode = SettingsData.GeneralAudioMode;
 		dataContainer.AudioEffectVolume = SettingsData.AudioEffectVolume;
@@ -88,12 +96,18 @@ public class SettingsFileManager : FileManager {
 		dataContainer.VSyncCount = SettingsData.VSyncCount;
 		dataContainer.LODBias = SettingsData.LODBias;
 		dataContainer.ParticleRaycastBudget = SettingsData.ParticleRaycastBudget;
+
+		dataContainer.PostProcessingDOF = SettingsData.PostProcessingDOF;
+		dataContainer.PostProcessingBloom = SettingsData.PostProcessingBloom;
 	}
 
 	/// <summary>
 	/// Sets the global custom data.
 	/// </summary>
 	protected override void SetGlobalCustomData(){
+
+		SettingsData.Language = dataContainer.Language;
+
 		SettingsData.GeneralAudioVolume = dataContainer.GeneralAudioVolume;
 		SettingsData.GeneralAudioMode = dataContainer.GeneralAudioMode;
 		SettingsData.AudioEffectVolume = dataContainer.AudioEffectVolume;
@@ -114,6 +128,9 @@ public class SettingsFileManager : FileManager {
 		SettingsData.VSyncCount = dataContainer.VSyncCount;
 		SettingsData.LODBias = dataContainer.LODBias;
 		SettingsData.ParticleRaycastBudget = dataContainer.ParticleRaycastBudget;
+
+		SettingsData.PostProcessingDOF = dataContainer.PostProcessingDOF;
+		SettingsData.PostProcessingBloom = dataContainer.PostProcessingBloom;
 	}
 
 }
@@ -123,6 +140,9 @@ public class SettingsFileManager : FileManager {
 /// </summary>
 [Serializable]
 class DataContainer{
+
+	public string Language;
+
 	public float GeneralAudioVolume;
 	public int GeneralAudioMode;
 	public float AudioEffectVolume;
@@ -148,5 +168,8 @@ class DataContainer{
 	public int VSyncCount;
 	public float LODBias;
 	public int ParticleRaycastBudget;
+
+	public bool PostProcessingDOF;
+	public bool PostProcessingBloom;
 
 }

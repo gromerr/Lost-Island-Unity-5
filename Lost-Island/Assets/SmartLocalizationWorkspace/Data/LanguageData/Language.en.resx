@@ -117,157 +117,157 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
 	<data name="MainMenu.Audio.AudioEffect" xml:space="preserve">
-		<value>Dźwięk efektów</value>
+		<value>Sound effects</value>
 	</data>
 	<data name="MainMenu.Audio.AudioMode" xml:space="preserve">
-		<value>Rodzaj dźwięku</value>
+		<value>Audio type</value>
 	</data>
 	<data name="MainMenu.Audio.AudioMusic" xml:space="preserve">
-		<value>Dźwięk muzyki</value>
+		<value>Sound of music</value>
 	</data>
 	<data name="MainMenu.Audio.AudioVoices" xml:space="preserve">
-		<value>Dźwięk głosów</value>
+		<value>Sound of voices</value>
 	</data>
 	<data name="MainMenu.Audio.GeneralAudio" xml:space="preserve">
-		<value>Dźwięk ogólny</value>
+		<value>General sound</value>
 	</data>
 	<data name="MainMenu.Back" xml:space="preserve">
-		<value>Wstecz</value>
+		<value>Back</value>
 	</data>
 	<data name="MainMenu.Cancel" xml:space="preserve">
-		<value>Anuluj</value>
+		<value>Cancel</value>
 	</data>
 	<data name="MainMenu.ConfirmPanel.Question" xml:space="preserve">
-		<value>Czy chcesz zapisać wprowadzone zmiany w ustawieniach?</value>
+		<value>Do you want to save your changes to the settings?</value>
 	</data>
 	<data name="MainMenu.ControlSettings.Info" xml:space="preserve">
-		<value>Kiedyś będzie...
-Obecnie edycja możliwa jedynie przez lancher.</value>
+		<value>Someday it'll be...
+Currently edition only possible through launcher.</value>
 	</data>
 	<data name="MainMenu.ExitGame" xml:space="preserve">
-		<value>Wyjdz z gry</value>
+		<value>Exit</value>
 	</data>
 	<data name="MainMenu.ExitPanel.Confirm" xml:space="preserve">
-		<value>Na pewno chcesz opuścić grę?</value>
+		<value>Do you really want to leave the game?</value>
 	</data>
 	<data name="MainMenu.Graphics.Anisotropic" xml:space="preserve">
-		<value>Filtrowanie anizotropowe</value>
+		<value>Anisotropic filtering</value>
 	</data>
 	<data name="MainMenu.Graphics.AntiAliasing" xml:space="preserve">
-		<value>Antyaliasing</value>
+		<value>Antialiasing</value>
 	</data>
 	<data name="MainMenu.Graphics.FullScreen" xml:space="preserve">
-		<value>Pełny ekran</value>
+		<value>Full screen</value>
 	</data>
 	<data name="MainMenu.Graphics.LightingQuality" xml:space="preserve">
-		<value>Jakość oświetlenia</value>
+		<value>Lighting quality</value>
 	</data>
 	<data name="MainMenu.Graphics.LOD" xml:space="preserve">
-		<value>Zasięg rysowania szczegółów</value>
+		<value>Level of detail</value>
 	</data>
 	<data name="MainMenu.Graphics.ParticleRaycast" xml:space="preserve">
-		<value>Szczegółowość efektów cząsteczkowych</value>
+		<value>Detail of particle effects</value>
 	</data>
 	<data name="MainMenu.Graphics.QualityAndShadows" xml:space="preserve">
-		<value>Jakość grafiki i cieni</value>
+		<value>Quality and shadows</value>
 	</data>
 	<data name="MainMenu.Graphics.RealtimeReflection" xml:space="preserve">
-		<value>Refleksja czasu rzeczywistego</value>
+		<value>Realtime reflection</value>
 	</data>
 	<data name="MainMenu.Graphics.Resolution" xml:space="preserve">
-		<value>Rozdzielczość</value>
+		<value>Resolution</value>
 	</data>
 	<data name="MainMenu.Graphics.Screen" xml:space="preserve">
-		<value>Ekran</value>
+		<value>Screen</value>
 	</data>
 	<data name="MainMenu.Graphics.ShadowDistance" xml:space="preserve">
-		<value>Zasięg cieniowania</value>
+		<value>Shadow distance</value>
 	</data>
 	<data name="MainMenu.Graphics.TextureQuality" xml:space="preserve">
-		<value>Jakość tekstur</value>
+		<value>Texture quality</value>
 	</data>
 	<data name="MainMenu.Graphics.Value.Extreme" xml:space="preserve">
-		<value>Ekstremalne</value>
+		<value>Extreme</value>
 	</data>
 	<data name="MainMenu.Graphics.Value.Fantastic" xml:space="preserve">
-		<value>Fantastyczne</value>
+		<value>Fantastic</value>
 	</data>
 	<data name="MainMenu.Graphics.Value.Good" xml:space="preserve">
-		<value>Dobre</value>
+		<value>Good</value>
 	</data>
 	<data name="MainMenu.Graphics.Value.High" xml:space="preserve">
-		<value>Wysokie</value>
+		<value>High</value>
 	</data>
 	<data name="MainMenu.Graphics.Value.Low" xml:space="preserve">
-		<value>Niskie</value>
+		<value>Low</value>
 	</data>
 	<data name="MainMenu.Graphics.Value.Lowest" xml:space="preserve">
-		<value>Najniższe</value>
+		<value>Lowest</value>
 	</data>
 	<data name="MainMenu.Graphics.Value.Medium" xml:space="preserve">
-		<value>Średnie</value>
+		<value>Medium</value>
 	</data>
 	<data name="MainMenu.Graphics.VSync" xml:space="preserve">
-		<value>Synchronizacja pionowa</value>
+		<value>Vertical synchronization</value>
 	</data>
 	<data name="MainMenu.Graphics.VSync.Off" xml:space="preserve">
-		<value>Wyłączona</value>
+		<value>Off</value>
 	</data>
 	<data name="MainMenu.Graphics.VSync.One" xml:space="preserve">
-		<value>Pojedyńcza</value>
+		<value>Single</value>
 	</data>
 	<data name="MainMenu.Graphics.VSync.Two" xml:space="preserve">
-		<value>Podwójna</value>
+		<value>Double</value>
 	</data>
 	<data name="MainMenu.GraphicsSettings.Graphics" xml:space="preserve">
-		<value>Grafika</value>
+		<value>Graphics</value>
 	</data>
 	<data name="MainMenu.GraphicsSettings.PostProcessing" xml:space="preserve">
-		<value>Postprocesy</value>
+		<value>Post-processing</value>
 	</data>
 	<data name="MainMenu.LoadGame" xml:space="preserve">
-		<value>Wczytaj gre</value>
+		<value>Load game</value>
 	</data>
 	<data name="MainMenu.Localization.EN" xml:space="preserve">
-		<value>Angielski</value>
+		<value>English</value>
 	</data>
 	<data name="MainMenu.Localization.Language" xml:space="preserve">
-		<value>Język</value>
+		<value>Language</value>
 	</data>
 	<data name="MainMenu.Localization.PL" xml:space="preserve">
-		<value>Polski</value>
+		<value>Polish</value>
 	</data>
 	<data name="MainMenu.NewGame" xml:space="preserve">
-		<value>Nowa gra</value>
+		<value>New game</value>
 	</data>
 	<data name="MainMenu.No" xml:space="preserve">
-		<value>Nie</value>
+		<value>No</value>
 	</data>
 	<data name="MainMenu.Options" xml:space="preserve">
-		<value>Opcje</value>
+		<value>Options</value>
 	</data>
 	<data name="MainMenu.Options.AudioSettings" xml:space="preserve">
 		<value>Audio</value>
 	</data>
 	<data name="MainMenu.Options.ControlSettings" xml:space="preserve">
-		<value>Sterowanie</value>
+		<value>Control</value>
 	</data>
 	<data name="MainMenu.Options.GraphicsSettings" xml:space="preserve">
-		<value>Wideo</value>
-	</data>
-	<data name="MainMenu.Save" xml:space="preserve">
-		<value>Zapisz</value>
-	</data>
-	<data name="MainMenu.StartPress" xml:space="preserve">
-		<value>Naciśnij lewy przycisk myszy aby rozpocząć grę.</value>
-	</data>
-	<data name="MainMenu.Yes" xml:space="preserve">
-		<value>Tak</value>
-	</data>
-	<data name="MainMenu.PostProcessing.DOF" xml:space="preserve">
-		<value>Głębia ostrości</value>
+		<value>Video</value>
 	</data>
 	<data name="MainMenu.PostProcessing.Bloom" xml:space="preserve">
 		<value>Bloom</value>
+	</data>
+	<data name="MainMenu.PostProcessing.DOF" xml:space="preserve">
+		<value>Depth of field</value>
+	</data>
+	<data name="MainMenu.Save" xml:space="preserve">
+		<value>Save</value>
+	</data>
+	<data name="MainMenu.StartPress" xml:space="preserve">
+		<value>Press left mouse button to start game.</value>
+	</data>
+	<data name="MainMenu.Yes" xml:space="preserve">
+		<value>Yes</value>
 	</data>
 </root>

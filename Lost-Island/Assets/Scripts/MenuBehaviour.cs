@@ -10,6 +10,8 @@ public class MenuBehaviour : MonoBehaviour {
 	public GrphicsHelper graphicsHelper;
 	public GameObject confirmPanel;
 	public GameObject videoPanel;
+	public Slider sliderLanguage;
+	public Text textLanguage;
 	public Slider sliderGeneralAudioVolume;
 	public Slider sliderAudioEffectVolume;
 	public Slider sliderAudioVoicesVolume;
@@ -36,6 +38,10 @@ public class MenuBehaviour : MonoBehaviour {
 	public Text textVSyncCount;
 	public Slider sliderLODBias;
 	public Slider sliderParticleRaycastBudget;
+	public Toggle togglePostProcessingDOF;
+	public Toggle togglePostProcessingBloom;
+//	public Slider sliderLanguage;
+//	public Text textLanguage;
 
 	private AudioScene audioScene;
 	private const string lowestOption = "Najniższe";
@@ -61,23 +67,24 @@ public class MenuBehaviour : MonoBehaviour {
 
 	void Start(){
 
-		SetSettingsAudioInterfaceAtStart();
+		SetSettingsInterfaceAtStart();
 	}
 
 	private void HoldInEveryScene(){
-		
+
 		if( menuBehaviour == null ){
 			DontDestroyOnLoad( gameObject );
 			menuBehaviour = this;
 		}else if( menuBehaviour != this){
 			Destroy( gameObject );
+
 		}
 	}
 
 	/// <summary>
 	/// Sets the settings audio interface at start.
 	/// </summary>
-	void SetSettingsAudioInterfaceAtStart(){
+	void SetSettingsInterfaceAtStart(){
 
 		sliderGeneralAudioVolume.value = SettingsData.GeneralAudioVolume;
 		sliderAudioEffectVolume.value = SettingsData.AudioEffectVolume;
@@ -96,6 +103,9 @@ public class MenuBehaviour : MonoBehaviour {
 		sliderVSyncCount.value = SettingsData.VSyncCount;
 		sliderLODBias.value = SettingsData.LODBias;
 		sliderParticleRaycastBudget.value = SettingsData.ParticleRaycastBudget;
+		sliderLanguage.value = GlobalSettings.GetLanguage( SettingsData.Language );
+		togglePostProcessingDOF.isOn = SettingsData.PostProcessingDOF;
+		togglePostProcessingBloom.isOn = SettingsData.PostProcessingBloom;
 	}
 
 	/// <summary>
@@ -147,6 +157,12 @@ public class MenuBehaviour : MonoBehaviour {
 		audioScene.SetAudioMusicVolume( sliderAudioMusicVolume.value );
 	}
 
+	public void DisplayLanguageOnSliderChange(){
+
+
+		
+	}
+
 	/// <summary>
 	/// Displaies the screen resolution on slider change. Slider value is array index.
 	/// </summary>
@@ -164,30 +180,30 @@ public class MenuBehaviour : MonoBehaviour {
 
 		int quality = (int)sliderQualityLevel.value;
 
-		switch(quality){
-
-		case 0:
-			textQualityLevel.text = lowestOption;
-			break;
-		case 1:
-			textQualityLevel.text = lowOption;
-			break;
-		case 2:
-			textQualityLevel.text = mediumOption;
-			break;
-		case 3:
-			textQualityLevel.text = goodOption;
-			break;
-		case 4:
-			textQualityLevel.text = highOption;
-			break;
-		case 5:
-			textQualityLevel.text = fantasticOption;
-			break;
-		case 6:
-			textQualityLevel.text = extremeOption;
-			break;
-		}
+//		switch(quality){
+//
+//		case 0:
+//			textQualityLevel.text = lowestOption;
+//			break;
+//		case 1:
+//			textQualityLevel.text = lowOption;
+//			break;
+//		case 2:
+//			textQualityLevel.text = mediumOption;
+//			break;
+//		case 3:
+//			textQualityLevel.text = goodOption;
+//			break;
+//		case 4:
+//			textQualityLevel.text = highOption;
+//			break;
+//		case 5:
+//			textQualityLevel.text = fantasticOption;
+//			break;
+//		case 6:
+//			textQualityLevel.text = extremeOption;
+//			break;
+//		}
 
 		DisplayPixelLightCountOnSliderChange( false );
 		DisplayTextureQualityOnSliderChange( false );
@@ -215,23 +231,23 @@ public class MenuBehaviour : MonoBehaviour {
 			sliderPixelLightCount.value = result;
 		}
 
-		switch( result ){
-		case 0:
-			textPixelLightCount.text = lowestOption;
-			break;
-		case 1:
-			textPixelLightCount.text = lowOption;
-			break;
-		case 2:
-			textPixelLightCount.text = mediumOption;
-			break;
-		case 3:
-			textPixelLightCount.text = goodOption;
-			break;
-		case 4:
-			textPixelLightCount.text = highOption;
-			break;
-		}
+//		switch( result ){
+//		case 0:
+//			textPixelLightCount.text = lowestOption;
+//			break;
+//		case 1:
+//			textPixelLightCount.text = lowOption;
+//			break;
+//		case 2:
+//			textPixelLightCount.text = mediumOption;
+//			break;
+//		case 3:
+//			textPixelLightCount.text = goodOption;
+//			break;
+//		case 4:
+//			textPixelLightCount.text = highOption;
+//			break;
+//		}
 	}
 
 	/// <summary>
@@ -249,20 +265,20 @@ public class MenuBehaviour : MonoBehaviour {
 			sliderTextureQuality.value = result;
 		}
 		
-		switch( result ){
-		case 0:
-			textTextureQuality.text = highOption;
-			break;
-		case 1:
-			textTextureQuality.text = goodOption;
-			break;
-		case 2:
-			textTextureQuality.text = mediumOption;
-			break;
-		case 3:
-			textTextureQuality.text = lowOption;
-			break;
-		}
+//		switch( result ){
+//		case 0:
+//			textTextureQuality.text = highOption;
+//			break;
+//		case 1:
+//			textTextureQuality.text = goodOption;
+//			break;
+//		case 2:
+//			textTextureQuality.text = mediumOption;
+//			break;
+//		case 3:
+//			textTextureQuality.text = lowOption;
+//			break;
+//		}
 	}
 
 	/// <summary>
@@ -280,17 +296,17 @@ public class MenuBehaviour : MonoBehaviour {
 			sliderAnisotropicTextures.value = result;
 		}
 		
-		switch( result ){
-		case 0:
-			textAnisotropicTextures.text = lowOption;
-			break;
-		case 1:
-			textAnisotropicTextures.text = mediumOption;
-			break;
-		case 2:
-			textAnisotropicTextures.text = highOption;
-			break;
-		}
+//		switch( result ){
+//		case 0:
+//			textAnisotropicTextures.text = lowOption;
+//			break;
+//		case 1:
+//			textAnisotropicTextures.text = mediumOption;
+//			break;
+//		case 2:
+//			textAnisotropicTextures.text = highOption;
+//			break;
+//		}
 
 	}
 
@@ -309,20 +325,20 @@ public class MenuBehaviour : MonoBehaviour {
 			sliderAntiAliasing.value = result;
 		}
 		
-		switch( result ){
-		case 0:
-			textAntiAliasing.text = lowOption;
-			break;
-		case 1:
-			textAntiAliasing.text = mediumOption;
-			break;
-		case 2:
-			textAntiAliasing.text = highOption;
-			break;
-		case 3:
-			textAntiAliasing.text = extremeOption;
-			break;
-		}
+//		switch( result ){
+//		case 0:
+//			textAntiAliasing.text = lowOption;
+//			break;
+//		case 1:
+//			textAntiAliasing.text = mediumOption;
+//			break;
+//		case 2:
+//			textAntiAliasing.text = highOption;
+//			break;
+//		case 3:
+//			textAntiAliasing.text = extremeOption;
+//			break;
+//		}
 		
 	}
 
@@ -373,17 +389,17 @@ public class MenuBehaviour : MonoBehaviour {
 			sliderVSyncCount.value = result;
 		}
 
-		switch( result ){
-		case 0:
-			textVSyncCount.text = "Wyłączona";
-			break;
-		case 1:
-			textVSyncCount.text = "Pojedyńcza";
-			break;
-		case 2:
-			textVSyncCount.text = "Podwójna";
-			break;
-		}
+//		switch( result ){
+//		case 0:
+//			textVSyncCount.text = "Wyłączona";
+//			break;
+//		case 1:
+//			textVSyncCount.text = "Pojedyńcza";
+//			break;
+//		case 2:
+//			textVSyncCount.text = "Podwójna";
+//			break;
+//		}
 	}
 
 	/// <summary>
@@ -453,7 +469,10 @@ public class MenuBehaviour : MonoBehaviour {
 		   	sliderShadowDistance.value == SettingsData.ShadowDistance &&
 		   	(int)sliderVSyncCount.value == SettingsData.VSyncCount &&
 		   	sliderLODBias.value == SettingsData.LODBias &&
-		   	(int)sliderParticleRaycastBudget.value == SettingsData.ParticleRaycastBudget
+		   	(int)sliderParticleRaycastBudget.value == SettingsData.ParticleRaycastBudget &&
+		   	(int)sliderLanguage.value == GlobalSettings.GetLanguage( SettingsData.Language ) &&
+		   	togglePostProcessingDOF.isOn == SettingsData.PostProcessingDOF &&
+		   	togglePostProcessingBloom.isOn == SettingsData.PostProcessingBloom
 		   ){
 
 			return true;
@@ -467,7 +486,7 @@ public class MenuBehaviour : MonoBehaviour {
 	/// </summary>
 	public void CancelChangedGameSettings(){
 
-		SetSettingsAudioInterfaceAtStart();
+		SetSettingsInterfaceAtStart();
 		audioScene.SetAudioVolumeInCurrentScene();
 	}
 
@@ -475,6 +494,8 @@ public class MenuBehaviour : MonoBehaviour {
 	/// Saves the changed game settings.
 	/// </summary>
 	public void SaveChangedGameSettings(){
+
+		SettingsData.Language = GlobalSettings.GetLanguage( (int)sliderLanguage.value );
 
 		SettingsData.GeneralAudioVolume = sliderGeneralAudioVolume.value;
 		SettingsData.AudioEffectVolume = sliderAudioEffectVolume.value;
@@ -494,7 +515,11 @@ public class MenuBehaviour : MonoBehaviour {
 		SettingsData.VSyncCount = (int)sliderVSyncCount.value;
 		SettingsData.LODBias = sliderLODBias.value;
 		SettingsData.ParticleRaycastBudget = (int)sliderParticleRaycastBudget.value;
+
+		SettingsData.PostProcessingDOF = togglePostProcessingDOF.isOn;
+		SettingsData.PostProcessingBloom = togglePostProcessingBloom.isOn;
 		
 		GameController.gameController.SaveSettings();
 	}
+	
 }

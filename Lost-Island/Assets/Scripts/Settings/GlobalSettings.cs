@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using SmartLocalization;
+using UnityStandardAssets.ImageEffects;
+
 
 public static class GlobalSettings {
 
@@ -225,5 +228,64 @@ public static class GlobalSettings {
 
 		return result;
 	}
-	
+
+	public static void SetLanguage(){
+
+		LanguageManager.Instance.ChangeLanguage( SettingsData.Language );
+	}
+
+	/// <summary>
+	/// Gets the language from string to number.
+	/// </summary>
+	/// <returns>The language.</returns>
+	/// <param name="name">Name.</param>
+	public static int GetLanguage( string name ){
+
+		switch( name ){
+
+		case "pl":
+			return 0;
+		case "en":
+			return 1;
+		default:
+			return 0;
+		}
+	}
+
+	/// <summary>
+	/// Gets the language from number to string.
+	/// </summary>
+	/// <returns>The language.</returns>
+	/// <param name="value">Value.</param>
+	public static string GetLanguage( int value ){
+
+		switch( value ){
+			
+		case 0:
+			return "pl";
+		case 1:
+			return "en";
+		default:
+			return "pl";
+		}
+	}
+
+	/// <summary>
+	/// Sets the post processing effect to Main Camera.
+	/// </summary>
+	public static void SetPostProcessingEffect(){
+
+		GameObject camera = Camera.main.gameObject;
+
+		Bloom bloom = camera.GetComponent<Bloom>();
+		DepthOfField dof = camera.GetComponent<DepthOfField>();
+
+		if( bloom != null ){
+			bloom.enabled = SettingsData.PostProcessingBloom;
+		}
+
+		if( dof != null ){
+			dof.enabled = SettingsData.PostProcessingDOF;
+		}
+	}
 }

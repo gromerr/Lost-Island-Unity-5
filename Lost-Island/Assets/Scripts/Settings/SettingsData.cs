@@ -7,6 +7,15 @@ using System.Collections;
 public class SettingsData : MonoBehaviour{
 
 	/// <summary>
+	/// Gets or sets the language in game.
+	/// </summary>
+	/// <value>The language.</value>
+	public static string Language{
+		get;
+		set;
+	}
+
+	/// <summary>
 	/// Gets or sets the general audio volume.
 	/// </summary>
 	/// <value>The general audio volume.</value>
@@ -154,6 +163,16 @@ public class SettingsData : MonoBehaviour{
 	}
 
 	public static int ParticleRaycastBudget{
+		get;
+		set;
+	}
+
+	public static bool PostProcessingDOF{
+		get;
+		set;
+	}
+
+	public static bool PostProcessingBloom{
 		get;
 		set;
 	}

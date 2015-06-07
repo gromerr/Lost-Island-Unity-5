@@ -6,11 +6,13 @@ public class GameController : MonoBehaviour {
 	public static GameController gameController;
 	private SettingsFileManager settingsManager;
 
+
 	void Awake(){
 
 		HoldGameControllerInEveryScene();
 		settingsManager = new SettingsFileManager();
 		GlobalSettings.SetGraphicsSettings();
+		GlobalSettings.SetLanguage();
 	}
 
 
@@ -25,14 +27,16 @@ public class GameController : MonoBehaviour {
 		}else if( gameController != this){
 			Destroy( gameObject );
 		}
+
 	}
 
 	/// <summary>
 	/// Saves the settings to file.
 	/// </summary>
 	public void SaveSettings(){
-
+		GlobalSettings.SetPostProcessingEffect();
 		GlobalSettings.SetGraphicsSettings();
+		GlobalSettings.SetLanguage();
 		settingsManager.Save();
 	}
 
