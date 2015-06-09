@@ -21,6 +21,7 @@ public class GameController : MonoBehaviour {
 		settingsManager = new SettingsFileManager();
 		GlobalSettings.SetGraphicsSettings();
 		GlobalSettings.SetLanguage();
+		GlobalSettings.HoldLanguageManager();
 	}
 
 

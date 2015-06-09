@@ -229,9 +229,19 @@ public static class GlobalSettings {
 		return result;
 	}
 
+	/// <summary>
+	/// Sets the language.
+	/// </summary>
 	public static void SetLanguage(){
 
 		LanguageManager.Instance.ChangeLanguage( SettingsData.Language );
+	}
+
+	/// <summary>
+	/// Holds the language manager in every scene.
+	/// </summary>
+	public static void HoldLanguageManager(){
+		LanguageManager.SetDontDestroyOnLoad();
 	}
 
 	/// <summary>
