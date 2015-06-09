@@ -94,7 +94,7 @@ public class MenuBehaviour : MonoBehaviour {
 		toggleFullScreen.isOn = SettingsData.FullScreen;
 		sliderQualityLevel.value = SettingsData.QualityLevel;
 		sliderPixelLightCount.value = SettingsData.PixelLightCount;
-		sliderTextureQuality.value = SettingsData.TextureQuality;
+		sliderTextureQuality.value = SettingsData.TextureQuality * (-1);
 		sliderAnisotropicTextures.value = SettingsData.AnisotropicTextures;
 		sliderAntiAliasing.value = SettingsData.AntiAliasing;
 		toggleRealtimeReflectionProbes.isOn = SettingsData.RealtimeReflectionProbes;
@@ -214,10 +214,10 @@ public class MenuBehaviour : MonoBehaviour {
 		int result;
 		
 		if( playerChange ){
-			result = (int)sliderTextureQuality.value;
+			result = Math.Abs( (int)sliderTextureQuality.value );
 		}else{
 			result = (int)graphicsHelper.GetValue( (int)sliderQualityLevel.value, "TextureQuality" );
-			sliderTextureQuality.value = result;
+			sliderTextureQuality.value = result * (-1);
 		}
 	}
 
@@ -361,7 +361,7 @@ public class MenuBehaviour : MonoBehaviour {
 		   	SettingsData.FullScreen == toggleFullScreen.isOn &&
 		   	SettingsData.QualityLevel == (int)sliderQualityLevel.value &&
 		   	(int)sliderPixelLightCount.value == SettingsData.PixelLightCount &&
-		   	(int)sliderTextureQuality.value == SettingsData.TextureQuality &&
+		   	Mathf.Abs( (int)sliderTextureQuality.value ) == SettingsData.TextureQuality &&
 		   	(int)sliderAnisotropicTextures.value == SettingsData.AnisotropicTextures &&
 		   	toggleRealtimeReflectionProbes.isOn == SettingsData.RealtimeReflectionProbes &&
 		   	sliderShadowDistance.value == SettingsData.ShadowDistance &&
@@ -402,7 +402,7 @@ public class MenuBehaviour : MonoBehaviour {
 		SettingsData.FullScreen = toggleFullScreen.isOn;
 		SettingsData.QualityLevel = (int)sliderQualityLevel.value;
 		SettingsData.PixelLightCount = (int)sliderPixelLightCount.value;
-		SettingsData.TextureQuality = (int)sliderTextureQuality.value;
+		SettingsData.TextureQuality = Mathf.Abs( (int)sliderTextureQuality.value );
 		SettingsData.AnisotropicTextures = (int)sliderAnisotropicTextures.value;
 		SettingsData.AntiAliasing = (int)sliderAntiAliasing.value;
 		SettingsData.RealtimeReflectionProbes = toggleRealtimeReflectionProbes.isOn;

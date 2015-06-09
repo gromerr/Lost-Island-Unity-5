@@ -26,7 +26,7 @@ public class LocalizedSlider : LocalizedObject<Slider> {
 			referenceObject = GetComponent<Slider>();
 		}
 
-		return keywordsList.ElementAt( (int)referenceObject.value );
+		return keywordsList.ElementAt( Mathf.Abs( (int)referenceObject.value ) );
 	}
 
 	private void SetTextField( string key ){
