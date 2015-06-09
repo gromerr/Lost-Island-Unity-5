@@ -17,8 +17,6 @@ public class MenuBehaviour : MonoBehaviour {
 	public Slider sliderAudioEffectVolume;
 	public Slider sliderAudioVoicesVolume;
 	public Slider sliderAudioMusicVolume;
-	public Slider sliderGeneralAudioMode;
-	public Text textGeneralAudioMode;
 	public Slider sliderScreenResolution;
 	public Text textScreenResolution;
 	public Toggle toggleFullScreen;
@@ -92,7 +90,6 @@ public class MenuBehaviour : MonoBehaviour {
 		sliderAudioEffectVolume.value = SettingsData.AudioEffectVolume;
 		sliderAudioVoicesVolume.value = SettingsData.AudioVoicesVolume;
 		sliderAudioMusicVolume.value = SettingsData.AudioMusicVolume;
-		sliderGeneralAudioMode.value = SettingsData.GeneralAudioMode;
 		sliderScreenResolution.value = SettingsData.ScreenResolution;
 		toggleFullScreen.isOn = SettingsData.FullScreen;
 		sliderQualityLevel.value = SettingsData.QualityLevel;
@@ -124,16 +121,17 @@ public class MenuBehaviour : MonoBehaviour {
 		GlobalSettings.SetGeneralAudioVolume( sliderGeneralAudioVolume.value );
 	}
 
+	//TODO Current changing AudioMode in runtime make crash sound. Waiting for fixed this by Unity team.
 	/// <summary>
 	/// Sets the general audio mode on slider change.
 	/// </summary>
-	public void SetGeneralAudioModeOnSliderChange(){
-
-		textGeneralAudioMode.text = ((AudioSpeakerMode)sliderGeneralAudioMode.value).ToString();
-
-		GlobalSettings.SetGeneralAudioMode( (int)sliderGeneralAudioMode.value );
-
-	}
+//	public void SetGeneralAudioModeOnSliderChange(){
+//
+//		textGeneralAudioMode.text = ((AudioSpeakerMode)sliderGeneralAudioMode.value).ToString();
+//
+//		GlobalSettings.SetGeneralAudioMode( (int)sliderGeneralAudioMode.value );
+//
+//	}
 
 	/// <summary>
 	/// Sets the audio effect volume on slider change.
@@ -359,7 +357,6 @@ public class MenuBehaviour : MonoBehaviour {
 		   	SettingsData.AudioEffectVolume == sliderAudioEffectVolume.value &&
 		   	SettingsData.AudioMusicVolume == sliderAudioVoicesVolume.value &&
 		   	SettingsData.AudioMusicVolume == sliderAudioMusicVolume.value &&
-		   	SettingsData.GeneralAudioMode == (int)sliderGeneralAudioMode.value &&
 		   	SettingsData.ScreenResolution == (int)sliderScreenResolution.value &&
 		   	SettingsData.FullScreen == toggleFullScreen.isOn &&
 		   	SettingsData.QualityLevel == (int)sliderQualityLevel.value &&
@@ -397,15 +394,12 @@ public class MenuBehaviour : MonoBehaviour {
 	public void SaveChangedGameSettings(){
 
 		SettingsData.Language = GlobalSettings.GetLanguage( (int)sliderLanguage.value );
-
 		SettingsData.GeneralAudioVolume = sliderGeneralAudioVolume.value;
 		SettingsData.AudioEffectVolume = sliderAudioEffectVolume.value;
 		SettingsData.AudioMusicVolume = sliderAudioVoicesVolume.value;
 		SettingsData.AudioMusicVolume = sliderAudioMusicVolume.value;
-		SettingsData.GeneralAudioMode = (int)sliderGeneralAudioMode.value;
 		SettingsData.ScreenResolution = (int)sliderScreenResolution.value;
 		SettingsData.FullScreen = toggleFullScreen.isOn;
-
 		SettingsData.QualityLevel = (int)sliderQualityLevel.value;
 		SettingsData.PixelLightCount = (int)sliderPixelLightCount.value;
 		SettingsData.TextureQuality = (int)sliderTextureQuality.value;
@@ -416,10 +410,9 @@ public class MenuBehaviour : MonoBehaviour {
 		SettingsData.VSyncCount = (int)sliderVSyncCount.value;
 		SettingsData.LODBias = sliderLODBias.value;
 		SettingsData.ParticleRaycastBudget = (int)sliderParticleRaycastBudget.value;
-
 		SettingsData.PostProcessingDOF = togglePostProcessingDOF.isOn;
 		SettingsData.PostProcessingBloom = togglePostProcessingBloom.isOn;
-		
+
 		GameController.gameController.SaveSettings();
 	}
 	

@@ -17,6 +17,7 @@ public static class GlobalSettings {
 		AudioListener.volume = value;
 	}
 
+	//TODO Current changing AudioMode in runtime make crash sound. Waiting for fixed this by Unity team.
 	/// <summary>
 	/// Sets the general audio mode.
 	/// </summary>
@@ -49,6 +50,7 @@ public static class GlobalSettings {
 		AudioSettings.Reset (config);
 	}
 
+	//TODO Current changing AudioMode in runtime make crash sound. Waiting for fixed this by Unity team.
 	/// <summary>
 	/// Converts the audio speaker mode to int.
 	/// </summary>
