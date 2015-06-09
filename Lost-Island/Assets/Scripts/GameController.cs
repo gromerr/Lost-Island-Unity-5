@@ -1,11 +1,19 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class GameController : MonoBehaviour {
 
 	public static GameController gameController;
-	private SettingsFileManager settingsManager;
 
+	private SettingsFileManager settingsManager;
+	private int levelToLoad;
+
+	public int LevelToLoad{
+		get{
+			return levelToLoad;
+		}
+	}
 
 	void Awake(){
 
@@ -40,19 +48,20 @@ public class GameController : MonoBehaviour {
 		settingsManager.Save();
 	}
 
-	public void StartGame(){
-
-		Application.LoadLevel( 1 );
+	/// <summary>
+	/// Loads level with loading screen.
+	/// </summary>
+	public void LoadLoadingScreen(){
+		Application.LoadLevel( "LoadingScreen" );
 	}
 
+	/// <summary>
+	/// Loads the level.
+	/// </summary>
+	/// <param name="id">Identifier.</param>
+	public void LoadLevel( int id ){
 
-	// Use this for initialization
-	void Start () {
-	
+		levelToLoad = id;
 	}
 	
-	// Update is called once per frame
-	void Update () {
-	
-	}
 }

@@ -22,7 +22,7 @@ public abstract class LocalizedObject<Type> : MonoBehaviour where Type : class {
 		OnChangeLanguage(languageManager);
 	}
 
-	void OnDestroy(){
+	protected void OnDestroy(){
 
 		if(LanguageManager.HasInstance){
 			LanguageManager.Instance.OnChangeLanguage -= OnChangeLanguage;

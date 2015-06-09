@@ -261,6 +261,12 @@ Obecnie edycja możliwa jedynie przez launcher.</value>
 	<data name="MainMenu.PostProcessing.DOF" xml:space="preserve">
 		<value>Głębia ostrości</value>
 	</data>
+	<data name="MainMenu.ResumeGame" xml:space="preserve">
+		<value>Wznow gre</value>
+	</data>
+	<data name="MainMenu.ReturnToMainMenu" xml:space="preserve">
+		<value>Wyjdz do menu glownego</value>
+	</data>
 	<data name="MainMenu.Save" xml:space="preserve">
 		<value>Zapisz</value>
 	</data>

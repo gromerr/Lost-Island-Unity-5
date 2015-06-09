@@ -261,6 +261,12 @@ Currently edition only possible through launcher.</value>
 	<data name="MainMenu.PostProcessing.DOF" xml:space="preserve">
 		<value>Depth of field</value>
 	</data>
+	<data name="MainMenu.ResumeGame" xml:space="preserve">
+		<value>Resume game</value>
+	</data>
+	<data name="MainMenu.ReturnToMainMenu" xml:space="preserve">
+		<value>Return to main menu</value>
+	</data>
 	<data name="MainMenu.Save" xml:space="preserve">
 		<value>Save</value>
 	</data>

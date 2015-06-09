@@ -40,17 +40,10 @@ public class MenuBehaviour : MonoBehaviour {
 	public Slider sliderParticleRaycastBudget;
 	public Toggle togglePostProcessingDOF;
 	public Toggle togglePostProcessingBloom;
-//	public Slider sliderLanguage;
-//	public Text textLanguage;
+	public GameObject menu;
 
 	private AudioScene audioScene;
-	private const string lowestOption = "Najniższe";
-	private const string lowOption = "Niskie";
-	private const string mediumOption = "Średnie";
-	private const string goodOption = "Dobre";
-	private const string highOption = "Wysokie";
-	private const string fantasticOption = "Fantastyczne";
-	private const string extremeOption = "Ekstremalne";
+
 
 	public AudioScene AudioSceneProperty{
 		set{
@@ -58,18 +51,26 @@ public class MenuBehaviour : MonoBehaviour {
 		}
 	}
 
+	public GameObject Menu{
+		get{
+			return menu;
+		}
+	}
+
 	void Awake(){
 
 		HoldInEveryScene();
-		//audioScene = (AudioScene) FindObjectOfType( typeof(AudioScene));
 		sliderScreenResolution.maxValue = GlobalSettings.CountAvailabeResolutionsIndex();
 	}
 
 	void Start(){
-
 		SetSettingsInterfaceAtStart();
 	}
+	
 
+	/// <summary>
+	/// Holds the object in every scene.
+	/// </summary>
 	private void HoldInEveryScene(){
 
 		if( menuBehaviour == null ){
@@ -157,10 +158,10 @@ public class MenuBehaviour : MonoBehaviour {
 		audioScene.SetAudioMusicVolume( sliderAudioMusicVolume.value );
 	}
 
+	/// <summary>
+	/// Displaies the language on slider change.
+	/// </summary>
 	public void DisplayLanguageOnSliderChange(){
-
-
-		
 	}
 
 	/// <summary>
@@ -177,33 +178,6 @@ public class MenuBehaviour : MonoBehaviour {
 	/// Displaies the quality level on slider change.
 	/// </summary>
 	public void DisplayQualityLevelOnSliderChange(){
-
-		int quality = (int)sliderQualityLevel.value;
-
-//		switch(quality){
-//
-//		case 0:
-//			textQualityLevel.text = lowestOption;
-//			break;
-//		case 1:
-//			textQualityLevel.text = lowOption;
-//			break;
-//		case 2:
-//			textQualityLevel.text = mediumOption;
-//			break;
-//		case 3:
-//			textQualityLevel.text = goodOption;
-//			break;
-//		case 4:
-//			textQualityLevel.text = highOption;
-//			break;
-//		case 5:
-//			textQualityLevel.text = fantasticOption;
-//			break;
-//		case 6:
-//			textQualityLevel.text = extremeOption;
-//			break;
-//		}
 
 		DisplayPixelLightCountOnSliderChange( false );
 		DisplayTextureQualityOnSliderChange( false );
@@ -230,24 +204,6 @@ public class MenuBehaviour : MonoBehaviour {
 			result = (int)graphicsHelper.GetValue( (int)sliderQualityLevel.value, "PixelLightCount" );
 			sliderPixelLightCount.value = result;
 		}
-
-//		switch( result ){
-//		case 0:
-//			textPixelLightCount.text = lowestOption;
-//			break;
-//		case 1:
-//			textPixelLightCount.text = lowOption;
-//			break;
-//		case 2:
-//			textPixelLightCount.text = mediumOption;
-//			break;
-//		case 3:
-//			textPixelLightCount.text = goodOption;
-//			break;
-//		case 4:
-//			textPixelLightCount.text = highOption;
-//			break;
-//		}
 	}
 
 	/// <summary>
@@ -264,21 +220,6 @@ public class MenuBehaviour : MonoBehaviour {
 			result = (int)graphicsHelper.GetValue( (int)sliderQualityLevel.value, "TextureQuality" );
 			sliderTextureQuality.value = result;
 		}
-		
-//		switch( result ){
-//		case 0:
-//			textTextureQuality.text = highOption;
-//			break;
-//		case 1:
-//			textTextureQuality.text = goodOption;
-//			break;
-//		case 2:
-//			textTextureQuality.text = mediumOption;
-//			break;
-//		case 3:
-//			textTextureQuality.text = lowOption;
-//			break;
-//		}
 	}
 
 	/// <summary>
@@ -295,19 +236,6 @@ public class MenuBehaviour : MonoBehaviour {
 			result = (int)graphicsHelper.GetValue( (int)sliderQualityLevel.value, "AnisotropicTextures" );
 			sliderAnisotropicTextures.value = result;
 		}
-		
-//		switch( result ){
-//		case 0:
-//			textAnisotropicTextures.text = lowOption;
-//			break;
-//		case 1:
-//			textAnisotropicTextures.text = mediumOption;
-//			break;
-//		case 2:
-//			textAnisotropicTextures.text = highOption;
-//			break;
-//		}
-
 	}
 
 	/// <summary>
@@ -324,22 +252,6 @@ public class MenuBehaviour : MonoBehaviour {
 			result = (int)graphicsHelper.GetValue( (int)sliderQualityLevel.value, "AntiAliasing" );
 			sliderAntiAliasing.value = result;
 		}
-		
-//		switch( result ){
-//		case 0:
-//			textAntiAliasing.text = lowOption;
-//			break;
-//		case 1:
-//			textAntiAliasing.text = mediumOption;
-//			break;
-//		case 2:
-//			textAntiAliasing.text = highOption;
-//			break;
-//		case 3:
-//			textAntiAliasing.text = extremeOption;
-//			break;
-//		}
-		
 	}
 
 	/// <summary>
@@ -388,18 +300,6 @@ public class MenuBehaviour : MonoBehaviour {
 			result = (int)graphicsHelper.GetValue( (int)sliderQualityLevel.value, "VSyncCount" );
 			sliderVSyncCount.value = result;
 		}
-
-//		switch( result ){
-//		case 0:
-//			textVSyncCount.text = "Wyłączona";
-//			break;
-//		case 1:
-//			textVSyncCount.text = "Pojedyńcza";
-//			break;
-//		case 2:
-//			textVSyncCount.text = "Podwójna";
-//			break;
-//		}
 	}
 
 	/// <summary>

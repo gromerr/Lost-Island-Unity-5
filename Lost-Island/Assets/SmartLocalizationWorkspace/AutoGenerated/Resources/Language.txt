@@ -255,6 +255,12 @@ Obecnie edycja możliwa jedynie przez lancher.</value>
 	<data name="MainMenu.Options.GraphicsSettings" xml:space="preserve">
 		<value>Wideo</value>
 	</data>
+	<data name="MainMenu.PostProcessing.Bloom" xml:space="preserve">
+		<value>Bloom</value>
+	</data>
+	<data name="MainMenu.PostProcessing.DOF" xml:space="preserve">
+		<value>Głębia ostrości</value>
+	</data>
 	<data name="MainMenu.Save" xml:space="preserve">
 		<value>Zapisz</value>
 	</data>
@@ -264,10 +270,10 @@ Obecnie edycja możliwa jedynie przez lancher.</value>
 	<data name="MainMenu.Yes" xml:space="preserve">
 		<value>Tak</value>
 	</data>
-	<data name="MainMenu.PostProcessing.DOF" xml:space="preserve">
-		<value>Głębia ostrości</value>
+	<data name="MainMenu.ResumeGame" xml:space="preserve">
+		<value>Wznow gre</value>
 	</data>
-	<data name="MainMenu.PostProcessing.Bloom" xml:space="preserve">
-		<value>Bloom</value>
+	<data name="MainMenu.ReturnToMainMenu" xml:space="preserve">
+		<value>Wyjdz do menu glownego</value>
 	</data>
 </root>
