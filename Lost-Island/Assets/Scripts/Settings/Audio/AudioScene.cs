@@ -16,7 +16,12 @@ public class AudioScene : MonoBehaviour {
 
 	void Start(){
 
-		MenuBehaviour.menuBehaviour.AudioSceneProperty = this;
+		if( MenuBehaviour.menuBehaviour ){
+			MenuBehaviour.menuBehaviour.AudioSceneProperty = this;
+		}else{
+			Debug.Log( "There is no MenuBehaviour in scene" );
+		}
+
 		SetAudioVolumeInCurrentScene();
 	}
 	
