@@ -1,3 +1,6 @@
 [submodule "Lost-Island/Assets/ExternalAssets"]
 	path = Lost-Island/Assets/ExternalAssets
 	url = https://github.com/gromerr/ExternalAssets.git
+[submodule "Lost-Island/Assets/ReliefPack"]
+	path = Lost-Island/Assets/ReliefPack
+	url = https://github.com/gromerr/ReliefPack.git
