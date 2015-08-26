@@ -3,56 +3,66 @@ using UnityEngine.UI;
 using System.Collections;
 using System;
 
-public class LoadingManager : MonoBehaviour {
+public class LoadingManager : MonoBehaviour
+{
 
-	public Slider progressBar;
+    public Slider progressBar;
 
-	private AsyncOperation asynchronic;
+    private AsyncOperation asynchronic;
 
 
-	void Awake(){
+    void Awake()
+    {
 
-		if( ! GameController.gameController ){
-			StartCoroutine( LoadLevelAsynchronic( 1 ) );
-		}
-	}
-	
-	void Start () {
-	
-		StartLoadingLevel();
-	}
+        if (!GameController.gameController)
+        {
+            StartCoroutine(LoadLevelAsynchronic(1));
+        }
+    }
 
-	/// <summary>
-	/// Starts the loading level from gamecontroller.
-	/// </summary>
-	private void StartLoadingLevel(){
+    void Start()
+    {
 
-		try{
-			GlobalSettings.SetLanguage();
-			StartCoroutine( LoadLevelAsynchronic( GameController.gameController.LevelToLoad ) );
+        StartLoadingLevel();
+    }
 
-		}catch( Exception ex ){
+    /// <summary>
+    /// Starts the loading level from gamecontroller.
+    /// </summary>
+    private void StartLoadingLevel()
+    {
 
-			Debug.LogException( ex );
+        try
+        {
+            GlobalSettings.SetLanguage();
+            StartCoroutine(LoadLevelAsynchronic(GameController.gameController.LevelToLoad));
 
-			StartCoroutine( LoadLevelAsynchronic( 1 ) );
-		}
-	}
+        }
+        catch (Exception ex)
+        {
 
-	/// <summary>
-	/// Loads the level asynchronic.
-	/// </summary>
-	/// <returns>The level asynchronic.</returns>
-	/// <param name="id">Identifier of level.</param>
-	private IEnumerator LoadLevelAsynchronic( int id ){
-		
-		asynchronic = Application.LoadLevelAsync( id );
-		
-		while( !asynchronic.isDone ){
-			
-			progressBar.value = asynchronic.progress;
-			yield return null;
-		}
-	}
+            Debug.LogException(ex);
+
+            StartCoroutine(LoadLevelAsynchronic(1));
+        }
+    }
+
+    /// <summary>
+    /// Loads the level asynchronic.
+    /// </summary>
+    /// <returns>The level asynchronic.</returns>
+    /// <param name="id">Identifier of level.</param>
+    private IEnumerator LoadLevelAsynchronic(int id)
+    {
+
+        asynchronic = Application.LoadLevelAsync(id);
+
+        while (!asynchronic.isDone)
+        {
+
+            progressBar.value = asynchronic.progress;
+            yield return null;
+        }
+    }
 
 }

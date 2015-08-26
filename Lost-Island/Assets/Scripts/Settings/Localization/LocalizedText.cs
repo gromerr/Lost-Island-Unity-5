@@ -5,17 +5,20 @@ using SmartLocalization;
 using System.Linq;
 using System.Collections.Generic;
 
-public class LocalizedText : LocalizedObject<Text> {
+public class LocalizedText : LocalizedObject<Text>
+{
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start()
+    {
 
-		referenceObject.text = LanguageManager.Instance.GetTextValue( keywordsList.ElementAt(0) );
-	}
+        referenceObject.text = LanguageManager.Instance.GetTextValue(keywordsList.ElementAt(0));
+    }
 
-	protected override void OnChangeLanguage(LanguageManager languageManager){
+    protected override void OnChangeLanguage(LanguageManager languageManager)
+    {
 
-		referenceObject.text = LanguageManager.Instance.GetTextValue(keywordsList.ElementAt(0));
-	}
+        referenceObject.text = LanguageManager.Instance.GetTextValue(keywordsList.ElementAt(0));
+    }
 
 }

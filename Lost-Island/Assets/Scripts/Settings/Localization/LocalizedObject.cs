@@ -4,31 +4,35 @@ using System.Collections;
 using System.Collections.Generic;
 using SmartLocalization;
 
-public abstract class LocalizedObject<Type> : MonoBehaviour where Type : class {
-	
-	public List<string> keywordsList;
+public abstract class LocalizedObject<Type> : MonoBehaviour where Type : class
+{
 
-	protected Type referenceObject;
+    public List<string> keywordsList;
+
+    protected Type referenceObject;
 
 
-	protected void Awake(){
+    protected void Awake()
+    {
 
-		referenceObject = GetComponent<Type>();
+        referenceObject = GetComponent<Type>();
 
-		LanguageManager languageManager = LanguageManager.Instance;
-		languageManager.OnChangeLanguage += OnChangeLanguage;
-		
-		//Run the method one first time
-		OnChangeLanguage(languageManager);
-	}
+        LanguageManager languageManager = LanguageManager.Instance;
+        languageManager.OnChangeLanguage += OnChangeLanguage;
 
-	protected void OnDestroy(){
+        //Run the method one first time
+        OnChangeLanguage(languageManager);
+    }
 
-		if(LanguageManager.HasInstance){
-			LanguageManager.Instance.OnChangeLanguage -= OnChangeLanguage;
-		}
-	}
+    protected void OnDestroy()
+    {
 
-	protected abstract void OnChangeLanguage(LanguageManager languageManager);
+        if (LanguageManager.HasInstance)
+        {
+            LanguageManager.Instance.OnChangeLanguage -= OnChangeLanguage;
+        }
+    }
+
+    protected abstract void OnChangeLanguage(LanguageManager languageManager);
 
 }

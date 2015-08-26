@@ -2,67 +2,78 @@
 using UnityEngine.UI;
 using System.Collections;
 
-public class GameController : MonoBehaviour {
+public class GameController : MonoBehaviour
+{
 
-	public static GameController gameController;
+    public static GameController gameController;
 
-	private SettingsFileManager settingsManager;
-	private int levelToLoad;
+    private SettingsFileManager settingsManager;
+    private int levelToLoad;
 
-	public int LevelToLoad{
-		get{
-			return levelToLoad;
-		}
-	}
+    public int LevelToLoad
+    {
+        get
+        {
+            return levelToLoad;
+        }
+    }
 
-	void Awake(){
+    void Awake()
+    {
 
-		HoldGameControllerInEveryScene();
-		settingsManager = new SettingsFileManager();
-		GlobalSettings.SetGraphicsSettings();
-		GlobalSettings.SetLanguage();
-		GlobalSettings.HoldLanguageManager();
-	}
+        HoldGameControllerInEveryScene();
+        settingsManager = new SettingsFileManager();
+        GlobalSettings.SetGraphicsSettings();
+        GlobalSettings.SetLanguage();
+        GlobalSettings.HoldLanguageManager();
+    }
 
 
-	/// <summary>
-	/// Holds this game controller in every scene.
-	/// </summary>
-	private void HoldGameControllerInEveryScene(){
+    /// <summary>
+    /// Holds this game controller in every scene.
+    /// </summary>
+    private void HoldGameControllerInEveryScene()
+    {
 
-		if( gameController == null ){
-			DontDestroyOnLoad( gameObject );
-			gameController = this;
-		}else if( gameController != this){
-			Destroy( gameObject );
-		}
+        if (gameController == null)
+        {
+            DontDestroyOnLoad(gameObject);
+            gameController = this;
+        }
+        else if (gameController != this)
+        {
+            Destroy(gameObject);
+        }
 
-	}
+    }
 
-	/// <summary>
-	/// Saves the settings to file.
-	/// </summary>
-	public void SaveSettings(){
-		GlobalSettings.SetPostProcessingEffect();
-		GlobalSettings.SetGraphicsSettings();
-		GlobalSettings.SetLanguage();
-		settingsManager.Save();
-	}
+    /// <summary>
+    /// Saves the settings to file.
+    /// </summary>
+    public void SaveSettings()
+    {
+        GlobalSettings.SetPostProcessingEffect();
+        GlobalSettings.SetGraphicsSettings();
+        GlobalSettings.SetLanguage();
+        settingsManager.Save();
+    }
 
-	/// <summary>
-	/// Loads level with loading screen.
-	/// </summary>
-	public void LoadLoadingScreen(){
-		Application.LoadLevel( "LoadingScreen" );
-	}
+    /// <summary>
+    /// Loads level with loading screen.
+    /// </summary>
+    public void LoadLoadingScreen()
+    {
+        Application.LoadLevel("LoadingScreen");
+    }
 
-	/// <summary>
-	/// Loads the level.
-	/// </summary>
-	/// <param name="id">Identifier.</param>
-	public void LoadLevel( int id ){
+    /// <summary>
+    /// Loads the level.
+    /// </summary>
+    /// <param name="id">Identifier.</param>
+    public void LoadLevel(int id)
+    {
 
-		levelToLoad = id;
-	}
-	
+        levelToLoad = id;
+    }
+
 }

@@ -5,37 +5,44 @@ using System.Linq;
 using SmartLocalization;
 
 
-public class LocalizedSlider : LocalizedObject<Slider> {
+public class LocalizedSlider : LocalizedObject<Slider>
+{
 
-	public Text textField;
+    public Text textField;
 
-	void Start(){
+    void Start()
+    {
 
-		OnSliderChange();
-	}
+        OnSliderChange();
+    }
 
-	public void OnSliderChange(){
+    public void OnSliderChange()
+    {
 
-		string key = GetKeyLanguage();
-		SetTextField( key );
-	}
+        string key = GetKeyLanguage();
+        SetTextField(key);
+    }
 
-	private string GetKeyLanguage(){
+    private string GetKeyLanguage()
+    {
 
-		if( referenceObject == null ){
-			referenceObject = GetComponent<Slider>();
-		}
+        if (referenceObject == null)
+        {
+            referenceObject = GetComponent<Slider>();
+        }
 
-		return keywordsList.ElementAt( Mathf.Abs( (int)referenceObject.value ) );
-	}
+        return keywordsList.ElementAt(Mathf.Abs((int)referenceObject.value));
+    }
 
-	private void SetTextField( string key ){
-		textField.text  = LanguageManager.Instance.GetTextValue( key );
-	}
+    private void SetTextField(string key)
+    {
+        textField.text = LanguageManager.Instance.GetTextValue(key);
+    }
 
-	protected override void OnChangeLanguage(LanguageManager languageManager){
+    protected override void OnChangeLanguage(LanguageManager languageManager)
+    {
 
-		string key = GetKeyLanguage();
-		SetTextField( key );
-	}
+        string key = GetKeyLanguage();
+        SetTextField(key);
+    }
 }
