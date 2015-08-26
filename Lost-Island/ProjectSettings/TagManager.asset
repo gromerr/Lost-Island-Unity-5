@@ -9,6 +9,7 @@ TagManager:
   - AudioMusic
   - AudioScene
   - Menu
+  - StartMenu
   layers:
   - Default
   - TransparentFX

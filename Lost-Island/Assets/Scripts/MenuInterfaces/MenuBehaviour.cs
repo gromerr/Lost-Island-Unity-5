@@ -154,6 +154,16 @@ public class MenuBehaviour : MonoBehaviour
         panels.Find(panel => panel.name.Contains("Main Menu Panel")).SetActive(true);
     }
 
+    public void SetActivePlayer()
+    {
+        PlayerController.SetActive(true);
+    }
+
+    public void SetAcitveGame()
+    {
+        GameController.gameController.Pause = 1;
+    }
+
     /// <summary>
     /// Holds the object in every scene.
     /// </summary>
@@ -168,7 +178,19 @@ public class MenuBehaviour : MonoBehaviour
         else if (menuBehaviour != this)
         {
             Destroy(gameObject);
+            DestroyStartMenu();
+        }
+    }
 
+    /// <summary>
+    /// Destroy start menu if game was runs early.
+    /// </summary>
+    private void DestroyStartMenu()
+    {
+        GameObject startMenu = GameObject.FindWithTag("StartMenu");
+        if (startMenu)
+        {
+            Destroy(startMenu);
         }
     }
 

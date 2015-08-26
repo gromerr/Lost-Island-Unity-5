@@ -6,11 +6,14 @@ public class GUIController : MonoBehaviour
 
     private static MenuBehaviour menuBehaviour;
 
-    void Awake()
+    void Start()
     {
         GetMenuBehaviour();
     }
 
+    /// <summary>
+    /// Gets reference to MenuBehaviour
+    /// </summary>
     private void GetMenuBehaviour()
     {
         if (!menuBehaviour)
@@ -23,6 +26,9 @@ public class GUIController : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Set menu active
+    /// </summary>
     public static void SetMenu()
     {
         if (menuBehaviour)
@@ -30,10 +36,14 @@ public class GUIController : MonoBehaviour
             if (menuBehaviour.Menu.activeSelf)
             {
                 menuBehaviour.ShowMenu(false);
+                PlayerController.SetActive(true);
+                GameController.gameController.Pause = 1;
             }
             else
             {
                 menuBehaviour.ShowMenu(true);
+                PlayerController.SetActive(false);
+                GameController.gameController.Pause = 0;
             }
         }
         else
