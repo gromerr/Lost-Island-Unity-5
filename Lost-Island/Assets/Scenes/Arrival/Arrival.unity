@@ -248,6 +248,10 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: LoadLevel
       objectReference: {fileID: 0}
+    - target: {fileID: 112818, guid: 97d5440133dfa2845bbe8d1f067a7073, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 97d5440133dfa2845bbe8d1f067a7073, type: 2}
   m_IsPrefabParent: 0
@@ -1556,6 +1560,14 @@ Prefab:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
+      propertyPath: m_HeadBob.HorizontalBobRange
+      value: .100000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
+      propertyPath: m_HeadBob.VerticalBobRange
+      value: .100000001
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
   m_IsPrefabParent: 0
@@ -1709,7 +1721,7 @@ MonoBehaviour:
   RTP_TRIPLANAR_ADD: 0
   RTP_NORMALGLOBAL: 0
   RTP_TESSELLATION: 0
-  RTP_TESSELLATION_SAMPLE_TEXTURE: 0
+  RTP_TESSELLATION_SAMPLE_TEXTURE: 1
   RTP_HEIGHTMAP_SAMPLE_BICUBIC: 0
   RTP_DETAIL_HEIGHTMAP_SAMPLE: 0
   RTP_TREESGLOBAL: 0

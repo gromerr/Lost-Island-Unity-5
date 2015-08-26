@@ -10,4 +10,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Menu/Main Menu.unity
   - enabled: 1
-    path: Assets/Scenes/Arrival.unity
+    path: Assets/Scenes/Arrival/Arrival.unity

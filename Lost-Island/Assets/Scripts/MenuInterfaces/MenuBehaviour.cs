@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine.UI;
 using System;
 
@@ -9,38 +10,88 @@ public class MenuBehaviour : MonoBehaviour
 
     public static MenuBehaviour menuBehaviour;
 
-    public GrphicsHelper graphicsHelper;
-    public GameObject confirmPanel;
-    public GameObject videoPanel;
-    public Slider sliderLanguage;
-    public Text textLanguage;
-    public Slider sliderGeneralAudioVolume;
-    public Slider sliderAudioEffectVolume;
-    public Slider sliderAudioVoicesVolume;
-    public Slider sliderAudioMusicVolume;
-    public Slider sliderScreenResolution;
-    public Text textScreenResolution;
-    public Toggle toggleFullScreen;
-    public Slider sliderQualityLevel;
-    public Text textQualityLevel;
-    public Slider sliderPixelLightCount;
-    public Text textPixelLightCount;
-    public Slider sliderTextureQuality;
-    public Text textTextureQuality;
-    public Slider sliderAnisotropicTextures;
-    public Text textAnisotropicTextures;
-    public Slider sliderAntiAliasing;
-    public Text textAntiAliasing;
-    public Toggle toggleRealtimeReflectionProbes;
-    public Slider sliderShadowDistance;
-    public Text textShadowDistance;
-    public Slider sliderVSyncCount;
-    public Text textVSyncCount;
-    public Slider sliderLODBias;
-    public Slider sliderParticleRaycastBudget;
-    public Toggle togglePostProcessingDOF;
-    public Toggle togglePostProcessingBloom;
-    public GameObject menu;
+    [SerializeField]
+    private GrphicsHelper graphicsHelper;
+    [SerializeField]
+    private List<GameObject> panels;
+    /*
+    [SerializeField]
+    private GameObject mainMenuPanel;
+    [SerializeField]
+    private GameObject exitPanel;
+    [SerializeField]
+    private GameObject settingsMenuPanel;
+    [SerializeField]
+    private GameObject audioSettingsPanel;
+    [SerializeField]
+    private GameObject videoPanel;
+    [SerializeField]
+    private GameObject controllSettingsPanel;
+    [SerializeField]
+    private GameObject graphicSettingsPanel;
+    [SerializeField]
+    private GameObject postprocessingPanel;
+    [SerializeField]
+    private GameObject confirmPanel;
+     */
+    [SerializeField]
+    private Slider sliderLanguage;
+    [SerializeField]
+    private Text textLanguage;
+    [SerializeField]
+    private Slider sliderGeneralAudioVolume;
+    [SerializeField]
+    private Slider sliderAudioEffectVolume;
+    [SerializeField]
+    private Slider sliderAudioVoicesVolume;
+    [SerializeField]
+    private Slider sliderAudioMusicVolume;
+    [SerializeField]
+    private Slider sliderScreenResolution;
+    [SerializeField]
+    private Text textScreenResolution;
+    [SerializeField]
+    private Toggle toggleFullScreen;
+    [SerializeField]
+    private Slider sliderQualityLevel;
+    [SerializeField]
+    private Text textQualityLevel;
+    [SerializeField]
+    private Slider sliderPixelLightCount;
+    [SerializeField]
+    private Text textPixelLightCount;
+    [SerializeField]
+    private Slider sliderTextureQuality;
+    [SerializeField]
+    private Text textTextureQuality;
+    [SerializeField]
+    private Slider sliderAnisotropicTextures;
+    [SerializeField]
+    private Text textAnisotropicTextures;
+    [SerializeField]
+    private Slider sliderAntiAliasing;
+    [SerializeField]
+    private Text textAntiAliasing;
+    [SerializeField]
+    private Toggle toggleRealtimeReflectionProbes;
+    [SerializeField]
+    private Slider sliderShadowDistance;
+    [SerializeField]
+    private Text textShadowDistance;
+    [SerializeField]
+    private Slider sliderVSyncCount;
+    [SerializeField]
+    private Text textVSyncCount;
+    [SerializeField]
+    private Slider sliderLODBias;
+    [SerializeField]
+    private Slider sliderParticleRaycastBudget;
+    [SerializeField]
+    private Toggle togglePostProcessingDOF;
+    [SerializeField]
+    private Toggle togglePostProcessingBloom;
+    [SerializeField]
+    private GameObject menu;
 
     private AudioScene audioScene;
 
@@ -73,6 +124,35 @@ public class MenuBehaviour : MonoBehaviour
         SetSettingsInterfaceAtStart();
     }
 
+    /// <summary>
+    /// Show menu canvas
+    /// </summary>
+    /// <param name="value"></param>
+    public void ShowMenu(bool value)
+    {
+        if (value)
+        {
+            ResetPanels();
+            menu.SetActive(value);
+        }
+        else
+        {
+            menu.SetActive(value);
+        }
+    }
+
+    /// <summary>
+    /// Restart all panels to show main menu
+    /// </summary>
+    private void ResetPanels()
+    {
+        foreach (GameObject panel in panels)
+        {
+            panel.SetActive(false);
+        }
+
+        panels.Find(panel => panel.name.Contains("Main Menu Panel")).SetActive(true);
+    }
 
     /// <summary>
     /// Holds the object in every scene.
@@ -400,11 +480,13 @@ public class MenuBehaviour : MonoBehaviour
         if (CheckSettings())
         {
             GameObject.Find(name).SetActive(false);
-            videoPanel.SetActive(true);
+            //videoPanel.SetActive(true);
+            panels.Find(panel => panel.name.Contains("Video Settings Menu Panel")).SetActive(true);
         }
         else
         {
-            confirmPanel.SetActive(true);
+            //confirmPanel.SetActive(true);
+            panels.Find(panel => panel.name.Contains("Confirm Changes Panel")).SetActive(true);
         }
     }
 
