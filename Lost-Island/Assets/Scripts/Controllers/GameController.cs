@@ -76,4 +76,23 @@ public class GameController : MonoBehaviour
         levelToLoad = id;
     }
 
+    public float Pause
+    {
+        get
+        {
+            return Time.timeScale;
+        }
+        set
+        {
+            if (value < 0)
+            {
+                Time.timeScale = 1;
+            }
+            else
+            {
+                Time.timeScale = value;
+            }
+        }
+    }
+
 }
